@@ -1,0 +1,362 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.5s ease;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* Hide the default scrollbar */
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+    background: rgb(238,134,255);
+    background: linear-gradient(243deg, rgba(238,134,255,1) 0%, rgba(218,99,255,1) 100%);
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background: rgb(187,99,229);
+    background: linear-gradient(138deg, rgba(187,99,229,1) 0%, rgba(134,49,203,1) 100%);
+    border-radius: 6px;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+    background: rgb(187,99,229);
+    background: linear-gradient(138deg, rgb(175, 75, 222) 0%, rgb(131, 36, 208) 100%);
+}
+
+/* Firefox scrollbar */
+body {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+/* IE/Edge scrollbar */
+body::-ms-scrollbar {
+    width: 12px;
+}
+
+body::-ms-scrollbar-track {
+    background: #f1f1f1;
+}
+
+body::-ms-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+
+body::-ms-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+html{ 
+    scroll-behavior: smooth;
+    transition:  0.3s ease-in-out;
+}
+
+.top{
+    position:relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+
+.title{
+    position: absolute;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 800;
+    z-index: 10;
+}
+
+.main-area{
+    background: linear-gradient(210deg, #ff9966, #ff5e62);
+    width: 100%;
+    height: 65vh;
+    z-index: 9;
+    position: relative;
+    overflow: hidden;
+}
+
+.circles {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 9; /* Coloca os círculos atrás dos outros elementos */
+    transform: translate3d(0, 0, 0); /* Cria o efeito parallax */
+    pointer-events: none; /* Impede que os círculos interfiram com o conteúdo */
+    z-index: 1;
+}
+
+@keyframes animate {
+    0%{
+        opacity: 1;
+        border-radius: 0;
+        transform: translateY(0) rotate(0deg);
+    }
+    100%{
+        opacity: 0;
+        border-radius: 50%;
+        transform: translateY(-1000px) rotate(720deg);
+    }
+}
+
+.circles div {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgb(255, 255, 255, 0.2);
+    bottom: -150px;
+    animation: animate 25s linear infinite;
+    z-index: 1;
+}
+
+.circles div:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+.circles div:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles div:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles div:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles div:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles div:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles div:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles div:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles div:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles div:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+/* mid */
+.mid1{
+    background-image: radial-gradient(circle, #ffeceb, #fcdedd, #f9cfd1, #fdc4cd, #fdc4cd);
+}
+
+.mid{
+    display: flex;
+    padding: 30px 110px 40px 110px;
+    justify-content: center;
+    z-index: 2;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.lateral{  
+    text-align: justify;
+    padding: 15px;
+}
+
+.lateral h4{
+    text-align: center;
+    margin: 30px 0 0 0;
+}
+
+.lateral img{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 15px 0 30px 0;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+.box1{
+    background-color: rgb(255, 255, 255);
+    width: 600px;
+    margin: 5px;
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.176);
+    height: auto;
+    overflow: hidden;
+}
+
+.box2{
+    margin: 0 0 0 30px;
+    background-color: rgb(255, 255, 255);
+    margin: 5px;
+    width: 200px;
+    margin-left: 80px;
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.176);
+
+}
+
+.box1 p {
+    margin: 20px 30px 30px 30px;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.box1 h1{
+    margin: 50px 0 0 30px;
+}
+
+.card h2{
+    margin: 18px 0 0 0;
+}
+
+.card{
+    padding: 10px;
+    text-align: center;
+    width: 28%;
+    height: auto;
+    position: relative;
+}
+
+.card img{
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+}
+
+.btn{
+    margin-top: 18px;
+}
+
+button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border: black 1.5px solid;
+    border-radius: 8px;
+    background-color: #b31eaba2;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 18px;
+}
+
+button:hover {
+    background-color: #b31eacc8;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #b31eacc8;
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+    /* You can add additional focus styles if needed */
+}
+
+.mid3{
+    justify-content: center;
+    align-content: center;
+}
+
+.anim-element {
+    opacity: 0;
+    transform: translateY(20px); /* opcional: pode aplicar um leve deslocamento vertical */
+    transition: opacity 0.5s ease, transform 1.5s ease; /* adicione transições suaves */
+}
+
+@media screen and (max-width: 900px) {
+    /* Adjust styles for smaller screens here */
+    .mid1 {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .mid {
+        flex-direction: column; /* Stack boxes vertically on smaller screens */
+        align-items: center; /* Center align boxes on smaller screens */
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .box1 {
+        width: 100%; /* Make boxes full-width on smaller screens */
+    }
+
+    .box2 {
+        margin: 20px 0; /* Adjust margin for smaller screens */
+    }
+
+    .card{
+        width: 80%;
+    }
+
+    .frame{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+}
